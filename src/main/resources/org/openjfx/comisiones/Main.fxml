@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="762.0" style="-fx-background-color: CYAN;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.comisiones.MainController">
+   <children>
+      <Label layoutX="260.0" layoutY="14.0" text="NÓMINA DE EMPLEADOS" underline="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="320.0" layoutY="78.0" text="INGRESAR CÓDIGO">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBuscarCodigo" alignment="CENTER" layoutX="306.0" layoutY="104.0" onKeyTyped="#eventKey" />
+      <Button fx:id="btnBuscarCodigo" layoutX="351.0" layoutY="136.0" mnemonicParsing="false" onAction="#eventBuscarCodigo" text="BUSCAR" />
+      <Label layoutX="36.0" layoutY="207.0" text="CÓDIGO" />
+      <Label layoutX="143.0" layoutY="207.0" text="NOMBRE" />
+      <Label layoutX="256.0" layoutY="207.0" text="ENERO" />
+      <Label layoutX="357.0" layoutY="207.0" text="FEBRERO" />
+      <Label layoutX="465.0" layoutY="207.0" text="MARZO" />
+      <Label layoutX="577.0" layoutY="207.0" text="TOTAL" />
+      <Label layoutX="671.0" layoutY="207.0" text="PROMEDIO" />
+      <TextField fx:id="txtMarzo" alignment="CENTER" layoutX="441.0" layoutY="230.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="txtNombre" alignment="CENTER" layoutX="121.0" layoutY="230.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="txtEnero" alignment="CENTER" layoutX="230.0" layoutY="230.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="txtFebrero" alignment="CENTER" layoutX="336.0" layoutY="230.0" onKeyTyped="#eventKey" prefHeight="25.0" prefWidth="90.0" />
+      <TextField fx:id="txtCodigo" alignment="CENTER" editable="false" layoutX="14.0" layoutY="230.0" opacity="0.6" prefHeight="25.0" prefWidth="90.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPromedio" alignment="CENTER" editable="false" layoutX="656.0" layoutY="230.0" opacity="0.6" prefHeight="25.0" prefWidth="90.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtTotal" alignment="CENTER" editable="false" layoutX="550.0" layoutY="230.0" opacity="0.6" prefHeight="25.0" prefWidth="90.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Label layoutX="303.0" layoutY="56.0" text="BUSCAR REGISTRO(S)">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="303.0" layoutY="180.0" text="DATOS DE EMPLEADO">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnGuardarEmpleado" layoutX="131.0" layoutY="263.0" mnemonicParsing="false" onAction="#eventGuardar" text="GUARDAR" />
+      <Button fx:id="btnModificarEmpleado" layoutX="341.0" layoutY="263.0" mnemonicParsing="false" onAction="#eventModificar" text="MODIFICAR" />
+      <Button fx:id="btnBorrarEmpleado" layoutX="564.0" layoutY="263.0" mnemonicParsing="false" onAction="#eventBorrar" text="BORRAR" />
+      <Label layoutX="98.0" layoutY="329.0" text="INGRESAR CANTIDAD">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBuscarCantidad" alignment="CENTER" layoutX="92.0" layoutY="355.0" onKeyTyped="#eventKey" />
+      <Button fx:id="btnBuscarCantidad" layoutX="137.0" layoutY="387.0" mnemonicParsing="false" onAction="#eventBuscarCantidad" text="BUSCAR" />
+      <Label layoutX="89.0" layoutY="306.0" text="BUSCAR REGISTRO(S)">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="549.0" layoutY="329.0" text="INGRESAR MES">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtBuscarMes" alignment="CENTER" layoutX="521.0" layoutY="355.0" onKeyTyped="#eventKey" />
+      <Button fx:id="btnBuscarMes" layoutX="566.0" layoutY="387.0" mnemonicParsing="false" onAction="#eventBuscarMes" text="BUSCAR" />
+      <Label layoutX="518.0" layoutY="306.0" text="BUSCAR REGISTRO(S)">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnMayorVendedor" layoutX="345.0" layoutY="368.0" mnemonicParsing="false" onAction="#eventMayorVendedor" text="MOSTRAR" />
+      <Label layoutX="312.0" layoutY="342.0" text="MAYOR VENDEDOR">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tvLista" layoutY="426.0" prefHeight="165.0" prefWidth="762.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="110.0" text="CÓDIGO" />
+            <TableColumn fx:id="colNombre" prefWidth="110.0" text="NOMBRE" />
+          <TableColumn fx:id="colEnero" prefWidth="110.0" text="ENERO" />
+            <TableColumn fx:id="colFebrero" prefWidth="110.0" text="FEBRERO" />
+            <TableColumn fx:id="colMarzo" prefWidth="110.0" text="MARZO" />
+            <TableColumn fx:id="colTotal" prefWidth="110.0" text="TOTAL" />
+            <TableColumn fx:id="colPromedio" prefWidth="110.0" text="PROMEDIO" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="2.0" layoutY="593.0" prefHeight="21.0" prefWidth="96.0" text="TOTAL">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTotalGeneral" alignment="CENTER_RIGHT" editable="false" layoutX="551.0" layoutY="591.0" opacity="0.6" prefHeight="25.0" prefWidth="109.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtPromedioGeneral" alignment="CENTER_RIGHT" editable="false" layoutX="661.0" layoutY="590.0" opacity="0.6" prefHeight="25.0" prefWidth="101.0">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextField>
+      <Button layoutX="3.0" layoutY="2.0" mnemonicParsing="false" onAction="#eventLogoutAction" style="-fx-background-color: cyan; -fx-border-color: cyan;" text="Cerrar Sesión">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
